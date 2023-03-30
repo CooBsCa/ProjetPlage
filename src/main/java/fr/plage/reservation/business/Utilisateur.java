@@ -11,10 +11,10 @@ import javax.persistence.Id;
 @NoArgsConstructor
 public class Utilisateur {
     @Id
-    private long id;
-    private String nom;
-    private String prenom;
-    private String email;
-    private String motDePasse;
+    protected long id;
+    protected String nom;
+    protected String prenom;
+    protected String email;
+    protected String motDePasse;
 
 }
