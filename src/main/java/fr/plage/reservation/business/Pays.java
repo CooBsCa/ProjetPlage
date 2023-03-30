@@ -9,12 +9,8 @@ import javax.persistence.Id;
 @Entity
 @Data
 @NoArgsConstructor
-public class Utilisateur {
+public class Pays {
     @Id
-    private long id;
+    private String code;
     private String nom;
-    private String prenom;
-    private String email;
-    private String motDePasse;
-
 }
