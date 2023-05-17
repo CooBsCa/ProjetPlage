@@ -5,6 +5,8 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import java.time.LocalDate;
 @Entity
 @Data
@@ -20,4 +22,12 @@ public class Reservation {
     private byte moisExpiration;
     private byte anneeExpiration;
     private String cryptogramme;
+    @ManyToOne
+    private Client client;
+
+    @ManyToOne
+    private Statut statut;
+
+    @ManyToOne
+    private Concessionnaire concessionnaire;
 }

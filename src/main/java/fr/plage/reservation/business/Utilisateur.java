@@ -16,5 +16,4 @@ public class Utilisateur {
     protected String prenom;
     protected String email;
     protected String motDePasse;
-
 }
