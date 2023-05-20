@@ -1,9 +1,6 @@
 package fr.plage.reservation.business;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,6 +10,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Parasol {
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="Id")
 	private Long id;
 	private byte numEmplacement;
 	@ManyToOne

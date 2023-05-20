@@ -1,12 +1,10 @@
 package fr.plage.reservation.business;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 import java.util.List;
 
@@ -15,6 +13,8 @@ import java.util.List;
 @NoArgsConstructor
 public class File {
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="Id")
 	private Long id;
 	private byte numero;
 	private double prixJournalier;
