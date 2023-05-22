@@ -7,6 +7,9 @@ import lombok.Data;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 @AllArgsConstructor
 @Component
 public class AjoutDeDonnees implements CommandLineRunner {
@@ -16,6 +19,8 @@ public class AjoutDeDonnees implements CommandLineRunner {
     private final LienDeParenteDao lienDeParenteDao;
     private final StatutDao statutDao;
     private final PaysDao paysDao;
+    private final ClientDao clientDao;
+
     @Override
     public void run(String... args) throws Exception {
         for (int i = 0; i < 7; i++) {
@@ -42,5 +47,20 @@ public class AjoutDeDonnees implements CommandLineRunner {
         statutDao.save(new Statut("À traiter"));
         statutDao.save(new Statut("Refusée"));
         statutDao.save(new Statut("Confirmée"));
+
+        LocalDateTime date = LocalDateTime.now();
+
+        Client client1 = new Client();
+        client1.setNom("DUPONT");
+        client1.setPrenom("Jean");
+        client1.setEmail("dupontjean@gmail.com");
+        client1.setDateHeureInscription(date);
+        clientDao.save(client1);
+        Client client2 = new Client();
+        client2.setNom("DURAND");
+        client2.setPrenom("Pierre");
+        client2.setEmail("durandpierre@gmail.com");
+        client2.setDateHeureInscription(date);
+        clientDao.save(client2);
     }
 }

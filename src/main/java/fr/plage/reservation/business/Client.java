@@ -1,9 +1,7 @@
 package fr.plage.reservation.business;
 
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
@@ -16,6 +14,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 public class Client extends Utilisateur{
+    @NonNull
     private LocalDateTime dateHeureInscription;
     @ManyToOne
     private Pays pays;
