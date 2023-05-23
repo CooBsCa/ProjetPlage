@@ -84,7 +84,7 @@ public class AjoutDeDonnees implements CommandLineRunner {
 
         Reservation reservation = new Reservation();
         reservation.setClient(client1);
-        reservation.setStatut(statutDao.findByNom("Confirmée"));
+        reservation.setStatut(statutDao.findByNom("Confirmee"));
         reservation.setDateDebut(LocalDate.now());
         reservation.setDateFin(LocalDate.now().plusDays(1));
         reservation.setConcessionnaire(concessionnaire);
@@ -99,7 +99,7 @@ public class AjoutDeDonnees implements CommandLineRunner {
 
         Reservation reservation2 = new Reservation();
         reservation2.setClient(client2);
-        reservation2.setStatut(statutDao.findByNom("Confirmée"));
+        reservation2.setStatut(statutDao.findByNom("Confirmee"));
         reservation2.setDateDebut(LocalDate.now());
         reservation2.setDateFin(LocalDate.now().plusDays(2));
         reservation2.setConcessionnaire(concessionnaire);
