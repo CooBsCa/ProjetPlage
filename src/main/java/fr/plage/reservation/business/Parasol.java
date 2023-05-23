@@ -5,6 +5,8 @@ import javax.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @Entity
 @NoArgsConstructor
@@ -16,5 +18,7 @@ public class Parasol {
 	private byte numEmplacement;
 	@ManyToOne
 	private File file;
+	@ManyToMany(mappedBy = "parasols")
+	private List<Reservation> reservation;
 
 }

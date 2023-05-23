@@ -1,6 +1,7 @@
 package fr.plage.reservation.business;
 
 
+import fr.plage.reservation.dao.PaysDao;
 import lombok.*;
 
 import javax.persistence.Entity;
@@ -14,7 +15,6 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 public class Client extends Utilisateur{
-    @NonNull
     private LocalDateTime dateHeureInscription;
     @ManyToOne
     private Pays pays;
@@ -22,4 +22,10 @@ public class Client extends Utilisateur{
     private List<Reservation> reservations;
     @ManyToOne
     private LienDeParente lienDeParente;
+
+    public Client(String nom, String prenom, String email, String motDePasse) {
+        super(nom, prenom, email, motDePasse);
+        LocalDateTime date = LocalDateTime.now();
+        this.dateHeureInscription = date;
+    }
 }

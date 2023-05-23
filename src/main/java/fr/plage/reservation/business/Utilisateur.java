@@ -15,7 +15,7 @@ public class Utilisateur {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name="Id")
-    protected long id;
+    protected Long id;
     @NonNull
     protected String nom;
     @NonNull
@@ -23,4 +23,11 @@ public class Utilisateur {
     @NonNull
     protected String email;
     protected String motDePasse;
+
+    public Utilisateur(String nom, String prenom, String email, String motDePasse) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.email = email;
+        this.motDePasse = motDePasse;
+    }
 }
