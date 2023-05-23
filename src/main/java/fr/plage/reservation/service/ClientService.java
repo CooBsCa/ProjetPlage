@@ -10,7 +10,7 @@ public interface ClientService {
 
     Client recupererClient(Long id);
 
-    Client enregistrerClient(String nom, String prenom, String email, String motDePasse);
+    Client enregistrerClient(String nom, String prenom, String email, String motDePasse, String pays, String lienDeParente);
 
     Client mettreAJourClient(ClientDto clientDto);
 

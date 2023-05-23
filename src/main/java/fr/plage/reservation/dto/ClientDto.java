@@ -15,4 +15,8 @@ public class ClientDto {
     private String email;
     @JsonProperty("motDePasse")
     private String motDePasse;
+    @JsonProperty("pays")
+    private String pays;
+    @JsonProperty("lienDeParente")
+    private String lienDeParente;
 }

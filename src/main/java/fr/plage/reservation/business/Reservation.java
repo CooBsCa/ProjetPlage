@@ -37,6 +37,15 @@ public class Reservation {
     @ManyToMany
     private List<Parasol> parasols;
 
+    public Reservation(LocalDate dateDebut, LocalDate dateFin, String numeroCarte, byte moisExpiration, int anneeExpiration, String cryptogramme) {
+        this.dateDebut = dateDebut;
+        this.dateFin = dateFin;
+        this.numeroCarte = numeroCarte;
+        this.moisExpiration = moisExpiration;
+        this.anneeExpiration = anneeExpiration;
+        this.cryptogramme = cryptogramme;
+    }
+
     //calcul du montant à régler en fonction du coefficient de lien de parenté
     public void setMontantAReglerEnEuros(){
         this.parasols.forEach(parasol ->

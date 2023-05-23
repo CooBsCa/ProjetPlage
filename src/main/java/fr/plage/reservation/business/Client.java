@@ -1,6 +1,7 @@
 package fr.plage.reservation.business;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import fr.plage.reservation.dao.PaysDao;
 import lombok.*;
 
@@ -16,10 +17,13 @@ import java.util.List;
 @NoArgsConstructor
 public class Client extends Utilisateur{
     private LocalDateTime dateHeureInscription;
+    @JsonIgnore
     @ManyToOne
     private Pays pays;
+    @JsonIgnore
     @OneToMany(mappedBy = "client")
     private List<Reservation> reservations;
+    @JsonIgnore
     @ManyToOne
     private LienDeParente lienDeParente;
 

@@ -44,7 +44,7 @@ public class AjoutDeDonnees implements CommandLineRunner {
         }
         lienDeParenteDao.save(new LienDeParente("Frere-Soeur",(float)0.5));
         lienDeParenteDao.save(new LienDeParente("Cousin-Cousine",(float)0.75));
-        lienDeParenteDao.save(new LienDeParente("Aucun Lien",(float)1));
+        lienDeParenteDao.save(new LienDeParente("Aucun",(float)1));
 
         paysDao.save(new Pays("France"));
         paysDao.save(new Pays("Espagne"));
@@ -63,7 +63,7 @@ public class AjoutDeDonnees implements CommandLineRunner {
         client1.setPrenom("Jean");
         client1.setEmail("dupontjean@gmail.com");
         client1.setDateHeureInscription(date);
-        client1.setLienDeParente(lienDeParenteDao.findByNom("Aucun Lien"));
+        client1.setLienDeParente(lienDeParenteDao.findByNom("Aucun"));
         clientDao.save(client1);
         Client client2 = new Client();
         client2.setNom("DURAND");
@@ -112,13 +112,5 @@ public class AjoutDeDonnees implements CommandLineRunner {
         reservation2.setParasols(parasols);
         reservation2.setMontantAReglerEnEuros();
         reservationDao.save(reservation2);
-
-
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
-        String ladate = "16/08/2016";
-
-        //convert String to LocalDate
-        LocalDate localDate = LocalDate.parse(ladate, formatter);
-        System.out.println(localDate);
     }
 }
